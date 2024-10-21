@@ -20,9 +20,9 @@ const DLSForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await axios.post("http://localhost:8080/dls/calculate", null, {
+      const response = await axios.post("http://localhost:3306/dls/calculate", null, {
         params: {
           oversLeft: formData.oversLeft,
           wicketsLost: formData.wicketsLost,
@@ -30,12 +30,14 @@ const DLSForm = () => {
           currentScore: formData.currentScore,
         },
       });
-
+  
+      console.log(response.data); // Add this line to log the response
       setResult(response.data);
     } catch (error) {
       console.error("There was an error!", error);
     }
   };
+  
 
   return (
     <div>
