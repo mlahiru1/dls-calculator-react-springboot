@@ -22,7 +22,7 @@ const DLSForm = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post("http://localhost:3306/dls/calculate", null, {
+      const response = await axios.post("http://localhost:3310/dls/calculate", null, {
         params: {
           oversLeft: formData.oversLeft,
           wicketsLost: formData.wicketsLost,
